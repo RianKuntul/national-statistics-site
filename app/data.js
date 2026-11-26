@@ -1,115 +1,118 @@
-/* DataNusa data file: every figure below is a published Indonesian national
-   statistic, labelled with its source and reference year where it is shown.
-   Sources: BPS — Statistics Indonesia; Bank Indonesia; Ministry of Finance.
-   Figures are mid-year estimates or the release vintage named on the page. */
+// DataNusa — figures for Indonesia, each with its source and year.
+// All figures are public statistics from BPS (Statistics Indonesia) and
+// Bank Indonesia, rounded for display. Years are shown next to every figure
+// on the site so a visitor can see how fresh each number is.
 
-var DATA = {
+export const META = {
   country: "Indonesia",
-  updated: "November 2026",
-  keyIndicators: [
-    { label: "Population", value: "281.6m", note: "mid-year estimate, 2024", source: "BPS" },
-    { label: "GDP growth", value: "5.03%", note: "real GDP, 2024", source: "BPS" },
-    { label: "Inflation", value: "1.57%", note: "year-on-year, Dec 2024", source: "BPS" },
-    { label: "Unemployment", value: "4.91%", note: "open unemployment, Aug 2024", source: "BPS" },
-    { label: "Poverty rate", value: "8.57%", note: "24.06m people, Sep 2024", source: "BPS" },
-    { label: "Human Development Index", value: "75.02", note: "high category, 2024", source: "BPS" }
-  ],
-  ticker: [
-    "Population 281.6 million (2024)",
-    "GDP grew 5.03% in 2024",
-    "Inflation 1.57% in December 2024",
-    "Unemployment 4.91% in August 2024",
-    "Poverty 8.57% in September 2024",
-    "Exports US$264.7 billion in 2024"
-  ],
-  populationSeries: [
-    { year: 2010, value: 237.6 }, { year: 2015, value: 255.2 },
-    { year: 2020, value: 270.2 }, { year: 2022, value: 275.8 },
-    { year: 2023, value: 278.7 }, { year: 2024, value: 281.6 }
-  ],
-  gdpGrowth: [
-    { year: 2019, value: 5.02 }, { year: 2020, value: -2.07 },
-    { year: 2021, value: 3.70 }, { year: 2022, value: 5.31 },
-    { year: 2023, value: 5.05 }, { year: 2024, value: 5.03 }
-  ],
-  inflation: [
-    { year: 2019, value: 2.72 }, { year: 2020, value: 1.68 },
-    { year: 2021, value: 1.87 }, { year: 2022, value: 5.51 },
-    { year: 2023, value: 2.61 }, { year: 2024, value: 1.57 }
-  ],
-  unemployment: [
-    { year: 2019, value: 5.28 }, { year: 2020, value: 7.07 },
-    { year: 2021, value: 6.49 }, { year: 2022, value: 5.86 },
-    { year: 2023, value: 5.32 }, { year: 2024, value: 4.91 }
-  ],
-  poverty: [
-    { year: 2019, value: 9.22 }, { year: 2020, value: 10.19 },
-    { year: 2021, value: 9.71 }, { year: 2022, value: 9.57 },
-    { year: 2023, value: 9.36 }, { year: 2024, value: 8.57 }
-  ],
-  ageStructure: [
-    { group: "0–14 years", value: 23.9 },
-    { group: "15–64 years", value: 68.6 },
-    { group: "65+ years", value: 7.5 }
-  ],
-  gdpSectors: [
-    { sector: "Manufacturing", value: 18.7 },
-    { sector: "Wholesale & retail trade", value: 12.9 },
-    { sector: "Agriculture, forestry & fishing", value: 12.5 },
-    { sector: "Construction", value: 9.9 },
-    { sector: "Mining & quarrying", value: 8.0 },
-    { sector: "Transport & storage", value: 5.7 },
-    { sector: "Financial services", value: 4.2 },
-    { sector: "Information & communication", value: 4.1 },
-    { sector: "Public administration", value: 4.0 },
-    { sector: "All other services", value: 20.0 }
-  ],
-  provinces: [
-    { name: "West Java", pop: 49.94, capital: "Bandung" },
-    { name: "East Java", pop: 41.81, capital: "Surabaya" },
-    { name: "Central Java", pop: 38.28, capital: "Semarang" },
-    { name: "North Sumatra", pop: 15.59, capital: "Medan" },
-    { name: "Banten", pop: 12.43, capital: "Serang" },
-    { name: "Jakarta", pop: 10.68, capital: "Jakarta" },
-    { name: "South Sulawesi", pop: 9.36, capital: "Makassar" },
-    { name: "Lampung", pop: 9.22, capital: "Bandar Lampung" },
-    { name: "South Sumatra", pop: 8.84, capital: "Palembang" },
-    { name: "Riau", pop: 6.71, capital: "Pekanbaru" },
-    { name: "West Kalimantan", pop: 5.80, capital: "Pontianak" },
-    { name: "West Sumatra", pop: 5.76, capital: "Padang" },
-    { name: "Aceh", pop: 5.56, capital: "Banda Aceh" },
-    { name: "South Kalimantan", pop: 4.36, capital: "Banjarmasin" },
-    { name: "Bali", pop: 4.34, capital: "Denpasar" },
-    { name: "East Kalimantan", pop: 4.05, capital: "Samarinda" }
-  ],
-  society: [
-    { label: "Life expectancy", value: "73.9 years", note: "at birth, 2023", source: "BPS" },
-    { label: "Adult literacy", value: "96.0%", note: "ages 15+, 2023", source: "BPS" },
-    { label: "Mean years of schooling", value: "9.0 years", note: "ages 25+, 2024", source: "BPS" },
-    { label: "Stunting in under-5s", value: "21.5%", note: "2023 health survey", source: "Ministry of Health" },
-    { label: "Health insurance coverage", value: "98.6%", note: "national scheme, 2024", source: "BPJS Kesehatan" },
-    { label: "Informal employment", value: "58.0%", note: "share of workers, Aug 2024", source: "BPS" },
-    { label: "Labour force", value: "152.1m", note: "people, Aug 2024", source: "BPS" },
-    { label: "Internet users", value: "79.5%", note: "of population, 2024", source: "APJII survey" }
-  ],
-  trade: [
-    { label: "Exports", value: "US$264.7bn", note: "2024", source: "BPS" },
-    { label: "Imports", value: "US$233.7bn", note: "2024", source: "BPS" },
-    { label: "Trade balance", value: "+US$31.0bn", note: "surplus, 2024", source: "BPS" },
-    { label: "GDP per capita", value: "Rp 78.6m", note: "about US$4,960, 2024", source: "BPS" },
-    { label: "Government debt", value: "39.8% of GDP", note: "end 2024", source: "Ministry of Finance" },
-    { label: "Foreign reserves", value: "US$155.7bn", note: "end Dec 2024", source: "Bank Indonesia" }
-  ],
-  releases: [
-    { date: "Feb 2025", title: "GDP full year 2024 — growth 5.03%", topic: "Economy", source: "BPS" },
-    { date: "Jan 2025", title: "Poverty, September 2024 — rate 8.57%, 24.06 million people", topic: "Society", source: "BPS" },
-    { date: "Nov 2024", title: "Labour force survey, August 2024 — unemployment 4.91%", topic: "Society", source: "BPS" },
-    { date: "Dec 2024", title: "Inflation, November 2024 — 1.55% year-on-year", topic: "Economy", source: "BPS" },
-    { date: "Nov 2024", title: "Human Development Index 2023 — 74.39", topic: "Society", source: "BPS" },
-    { date: "Aug 2024", title: "Population estimate 2024 — 281.6 million", topic: "Population", source: "BPS" },
-    { date: "Jul 2024", title: "Poverty, March 2024 — rate 9.03%", topic: "Society", source: "BPS" },
-    { date: "May 2024", title: "GDP, first quarter 2024 — growth 5.11%", topic: "Economy", source: "BPS" },
-    { date: "Mar 2024", title: "Labour force survey, February 2024 — unemployment 4.82%", topic: "Society", source: "BPS" },
-    { date: "Feb 2024", title: "GDP full year 2023 — growth 5.05%", topic: "Economy", source: "BPS" }
-  ]
+  updated: "26 November 2026",
+  note: "Figures are rounded for display. See each section for source and year.",
 };
+
+export const KEY_FIGURES = [
+  { id: "population", label: "Population", value: "284.4 jt", detail: "2025 projection", source: "BPS, 2025", trend: "+0.8% / yr" },
+  { id: "gdp", label: "GDP (nominal)", value: "Rp22.138 T", detail: "2024, current prices", source: "BPS, 2024", trend: "+5.03% real" },
+  { id: "gdp-capita", label: "GDP per capita", value: "US$4.925", detail: "2024", source: "BPS, 2024", trend: "+4.1% vs 2023" },
+  { id: "inflation", label: "Inflation (yoy)", value: "1.57%", detail: "December 2024", source: "BPS, 2024", trend: "within BI target" },
+  { id: "poverty", label: "Poverty rate", value: "8.57%", detail: "September 2024", source: "BPS, 2024", trend: "down from 9.03%" },
+  { id: "unemployment", label: "Open unemployment", value: "4.91%", detail: "August 2024", source: "BPS, 2024", trend: "down from 5.32%" },
+  { id: "life", label: "Life expectancy", value: "74.15 yrs", detail: "2024", source: "BPS, 2024", trend: "+0.20 vs 2023" },
+  { id: "literacy", label: "Adult literacy", value: "96.1%", detail: "2024, age 15+", source: "BPS, 2024", trend: "+0.3 pts" },
+];
+
+// Population in millions, 2015-2025 (BPS projections; 2020 is the census count).
+export const POPULATION_SERIES = [
+  { year: 2015, value: 255.6 }, { year: 2016, value: 258.7 },
+  { year: 2017, value: 261.9 }, { year: 2018, value: 265.0 },
+  { year: 2019, value: 268.1 }, { year: 2020, value: 270.2 },
+  { year: 2021, value: 272.7 }, { year: 2022, value: 275.8 },
+  { year: 2023, value: 278.7 }, { year: 2024, value: 281.6 },
+  { year: 2025, value: 284.4 },
+];
+
+// Population by age group, 2024 (millions, BPS).
+export const AGE_GROUPS = [
+  { group: "0–14", value: 67.9 },
+  { group: "15–24", value: 45.6 },
+  { group: "25–34", value: 45.2 },
+  { group: "35–44", value: 41.8 },
+  { group: "45–54", value: 35.4 },
+  { group: "55–64", value: 24.9 },
+  { group: "65+", value: 20.8 },
+];
+
+// Ten most populous provinces, 2024 (BPS). Density per km².
+export const PROVINCES = [
+  { name: "Jawa Barat", pop: 50.35, density: 1425, capital: "Bandung" },
+  { name: "Jawa Timur", pop: 41.81, density: 874, capital: "Surabaya" },
+  { name: "Jawa Tengah", pop: 37.89, density: 1155, capital: "Semarang" },
+  { name: "Sumatera Utara", pop: 16.03, density: 220, capital: "Medan" },
+  { name: "Banten", pop: 12.43, density: 1288, capital: "Serang" },
+  { name: "DKI Jakarta", pop: 10.56, density: 15904, capital: "Jakarta" },
+  { name: "Sulawesi Selatan", pop: 9.36, density: 200, capital: "Makassar" },
+  { name: "Lampung", pop: 9.22, density: 266, capital: "Bandar Lampung" },
+  { name: "Sumatera Selatan", pop: 8.92, density: 97, capital: "Palembang" },
+  { name: "Riau", pop: 6.96, density: 80, capital: "Pekanbaru" },
+];
+
+// GDP by sector, share of GDP 2024 in % (BPS).
+export const GDP_SECTORS = [
+  { sector: "Manufacturing", share: 18.9 },
+  { sector: "Trade & repair", share: 12.9 },
+  { sector: "Agriculture", share: 12.5 },
+  { sector: "Construction", share: 9.9 },
+  { sector: "Mining & quarrying", share: 8.0 },
+  { sector: "Transport & storage", share: 5.4 },
+  { sector: "Information & comm.", share: 4.4 },
+  { sector: "Finance & insurance", share: 4.3 },
+  { sector: "Other services", share: 23.7 },
+];
+
+// Real GDP growth by year, % (BPS).
+export const GDP_GROWTH = [
+  { year: 2020, value: -2.07 }, { year: 2021, value: 3.70 },
+  { year: 2022, value: 5.31 }, { year: 2023, value: 5.05 },
+  { year: 2024, value: 5.03 },
+];
+
+// Consumer-price inflation, December yoy, % (BPS).
+export const INFLATION_SERIES = [
+  { year: 2020, value: 1.68 }, { year: 2021, value: 1.87 },
+  { year: 2022, value: 5.51 }, { year: 2023, value: 2.61 },
+  { year: 2024, value: 1.57 },
+];
+
+// Trade and money, 2024 (Bank Indonesia / BPS).
+export const ECONOMY_FACTS = [
+  { label: "Exports", value: "US$264.7 bn", source: "BPS, 2024" },
+  { label: "Imports", value: "US$233.7 bn", source: "BPS, 2024" },
+  { label: "Trade balance", value: "+US$31.0 bn", source: "BPS, 2024" },
+  { label: "BI policy rate", value: "6.00%", source: "Bank Indonesia, Dec 2024" },
+  { label: "Rupiah vs USD", value: "Rp16.157", source: "Bank Indonesia, end 2024" },
+  { label: "Foreign reserves", value: "US$155.7 bn", source: "Bank Indonesia, Dec 2024" },
+];
+
+// Society indicators (BPS, 2024 unless noted).
+export const SOCIETY = [
+  { label: "Poverty rate", value: "8.57%", year: "Sep 2024", note: "24.06 million people below the poverty line." },
+  { label: "Extreme poverty", value: "0.83%", year: "Mar 2024", note: "Down from 1.12% in March 2023." },
+  { label: "Gini ratio", value: "0.379", year: "Mar 2024", note: "Slightly lower than 0.388 a year earlier." },
+  { label: "Life expectancy", value: "74.15 years", year: "2024", note: "Highest in Yogyakarta (75.9), lowest in Sulawesi Barat." },
+  { label: "Mean years of schooling", value: "9.0 years", year: "2024", note: "Up from 8.7 years in 2021." },
+  { label: "Adult literacy (15+)", value: "96.1%", year: "2024", note: "Youth literacy (15–24) is 99.7%." },
+  { label: "Open unemployment", value: "4.91%", year: "Aug 2024", note: "7.47 million people; youth unemployment is far higher." },
+  { label: "Informal workers", value: "57.9%", year: "Aug 2024", note: "Share of workers in informal employment." },
+  { label: "Internet users", value: "79.5%", year: "2024", note: "APJII survey; 221 million Indonesians online." },
+];
+
+// Recent statistical releases.
+export const RELEASES = [
+  { date: "2026-11-03", title: "Consumer Price Index — October 2026", org: "BPS", kind: "Monthly" },
+  { date: "2026-10-15", title: "Labour Force Situation — August 2026", org: "BPS", kind: "Semester" },
+  { date: "2026-10-07", title: "Exports & Imports — September 2026", org: "BPS", kind: "Monthly" },
+  { date: "2026-10-01", title: "Gross Domestic Product — Q2 2026", org: "BPS", kind: "Quarterly" },
+  { date: "2026-09-15", title: "Poverty Profile — March 2026", org: "BPS", kind: "Semester" },
+  { date: "2026-09-05", title: "Economic Growth — Q2 2026", org: "BPS", kind: "Quarterly" },
+  { date: "2026-08-15", title: "Population Projection Update 2025–2045", org: "BPS", kind: "Special" },
+  { date: "2026-07-01", title: "Human Development Index 2025", org: "BPS", kind: "Annual" },
+];

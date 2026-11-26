@@ -3,41 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DataNusa — Indonesia in numbers: population, economy and society, with the source and year next to every figure. Works offline.">
 <title>DataNusa — Indonesia in Numbers</title>
-<meta name="description" content="DataNusa is an independent national statistics portal for Indonesia: population, economy, work, education and health, with every figure sourced and dated.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="#/" aria-label="DataNusa home">
-      <svg class="brand-mark" viewBox="0 0 40 40" width="36" height="36" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#0b5e5a"/><rect x="9" y="20" width="5" height="11" rx="1.5" fill="#f5b942"/><rect x="17.5" y="14" width="5" height="17" rx="1.5" fill="#ffffff"/><rect x="26" y="9" width="5" height="22" rx="1.5" fill="#8fd0c9"/></svg>
-      <span class="brand-text"><strong>DataNusa</strong><span>Indonesia in Numbers</span></span>
-    </a>
-    <nav class="main-nav" aria-label="Sections">
-      <a href="#/" data-nav="home">Overview</a>
-      <a href="#/population" data-nav="population">Population</a>
-      <a href="#/economy" data-nav="economy">Economy</a>
-      <a href="#/society" data-nav="society">Society</a>
-      <a href="#/releases" data-nav="releases">Releases</a>
-    </nav>
+  <a class="brand" href="#/">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="18" width="6" height="12" rx="1.5" fill="#0f766e"/><rect x="11" y="11" width="6" height="19" rx="1.5" fill="#b45309"/><rect x="20" y="4" width="6" height="26" rx="1.5" fill="#0f766e"/><rect x="27" y="14" width="3" height="16" rx="1.5" fill="#b45309"/></svg>
+    <span class="brand-name">DataNusa</span>
+    <span class="brand-sub">Indonesia in Numbers</span>
+  </a>
+  <div class="search-box">
+    <label class="visually-hidden" for="search">Search indicators</label>
+    <input id="search" type="search" placeholder="Search an indicator…" autocomplete="off">
+    <p id="search-hint" class="search-hint"></p>
   </div>
-  <div class="ticker wrap" id="ticker" aria-label="Headline figures"></div>
 </header>
-
-<main id="app" class="wrap" aria-live="polite"></main>
-
+<nav class="site-nav" aria-label="Sections">
+  <a href="#/">Overview</a>
+  <a href="#/population">Population</a>
+  <a href="#/economy">Economy</a>
+  <a href="#/society">Society</a>
+  <a href="#/releases">Releases</a>
+</nav>
+<main id="app" class="content"></main>
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <p><strong>DataNusa</strong> — an independent statistics portal. Figures are drawn from official Indonesian releases and are labelled with their source and year on every page. DataNusa is not affiliated with any government agency.</p>
-    <p class="footer-links"><a href="#/releases">Sources &amp; methods</a> · <a href="#/population">Population</a> · <a href="#/economy">Economy</a> · <a href="#/society">Society</a></p>
-    <p class="fineprint">All figures on this site are estimates from the releases cited. Population and economic series are revised when the source agency publishes updates.</p>
-  </div>
+  <p><strong>DataNusa</strong> is an independent explainer, not an official publication.
+  Figures come from BPS (Statistics Indonesia) and Bank Indonesia, each labelled with
+  its source and year. No data leaves your browser: the site works fully offline.</p>
+  <p class="foot-links"><a href="#/">Overview</a> · <a href="#/population">Population</a> ·
+  <a href="#/economy">Economy</a> · <a href="#/society">Society</a> · <a href="#/releases">Releases</a></p>
+  <p class="src">Updated 26 November 2026 · Figures rounded for display</p>
 </footer>
-
-<script src="data.js"></script>
-<script src="charts.js"></script>
-<script src="views.js"></script>
-<script src="main.js"></script>
+<script type="module" src="main.js"></script>
 </body>
 </html>
